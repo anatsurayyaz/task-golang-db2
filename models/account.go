@@ -1,8 +1,11 @@
 package models
 
-// Account represents a user account
 type Account struct {
-	ID      uint   `json:"id" gorm:"primaryKey"`
-	Name    string `json:"name"`
-	Balance int64  `json:"balance"`
+	AccountID int64  `json:"account_id" gorm:"primaryKey;autoIncrement;<-:false"`
+	Name      string `json:"name"`
+	Balance   int64  `json:"balance"`
 }
+
+// func (Account) TableName() string {
+// 	return "accounts"
+// }
